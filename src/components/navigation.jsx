@@ -97,9 +97,6 @@ const Navigation = () => {
 
         if(!username) return <Box display="flex" mt="3">
                                     <Link to="/Login"><Button size="sm"mr="25px" colorScheme='black' variant='outline'>Login</Button></Link>
-                                    <div className="cart">
-                                        <Link to="/Cart"><BiShoppingBag size = "20"color="White"/></Link>
-                                    </div>
                                     </Box>
 
          return <Box display="flex" mt="3">
