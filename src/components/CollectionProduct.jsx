@@ -12,7 +12,7 @@ import {
     AccordionItem,
     AccordionButton,
     AccordionPanel,
-    AccordionIcon,
+    AccordionIcon,Select
   } from '@chakra-ui/react'
 import { Box,Button ,Image,Text,Badge} from "@chakra-ui/react";
 import { useToast } from '@chakra-ui/react'
@@ -79,16 +79,16 @@ const CollectionProduct = (props) => {
                                         </AccordionButton>
                                         </h2>
                                         <AccordionPanel pb={4}>
-                                             <Button w="80px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">7W / 8.5 M</Button>
-                                             <Button w="80px"  mr="2"size="xs" colorScheme='' variant="outline">7.5W / 9 M</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">7.5</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">8</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">8.5</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">9</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">9.5</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">10</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">10.5</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">11</Button>
+                                        <Select size="md" variant='filled' placeholder='Select size'>
+                                            <option value='option1'>7 W / 8.5 M</option>
+                                            <option value='option2'>7.5 W / 9 M</option>
+                                            <option value='option3'>8 W / 9.5 M</option>
+                                            <option value='option3'>8.5 W / 10 M</option>
+                                            <option value='option3'>9 W / 10.5 M</option>
+                                            <option value='option3'>9.5 W / 11 M</option>
+                                            <option value='option3'>10 W / 11.5 M</option>
+                                            <option value='option3'>10.5 W / 12 M</option>
+                                            </Select>
                                              
                                         </AccordionPanel>
                                     </AccordionItem>

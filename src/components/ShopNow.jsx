@@ -9,7 +9,7 @@ const ShopNow = () => {
         <>
         <Container height="100%" mb="3" mt="3" maxW="container.lg">
             <div className="row">
-                    {sneakers.map(sneaker => <Product name={sneaker.name}
+                    {sneakers.map(sneaker => <Product key={sneaker._id} name={sneaker.name}
                                                         description={sneaker.description} 
                                                         price={sneaker.price}
                                                         image={sneaker.imageURL}

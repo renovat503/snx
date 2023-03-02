@@ -12,13 +12,16 @@ import {
     AccordionItem,
     AccordionButton,
     AccordionPanel,
-    AccordionIcon,
+    AccordionIcon,Select
   } from '@chakra-ui/react'
 import { Box,Button ,Image,Text,Badge} from "@chakra-ui/react";
 import { useToast } from '@chakra-ui/react'
 import { TiStarFullOutline } from 'react-icons/ti';
+import { Link } from 'react-router-dom';
 
 const Product = (props) => {
+
+    const username = localStorage.getItem('username');
     const { isOpen, onOpen, onClose } = useDisclosure()
     const toast = useToast()
 
@@ -57,7 +60,7 @@ const Product = (props) => {
                     <Modal size="6xl" isOpen={isOpen} onClose={onClose} isCentered motionPreset='slideInBottom'>
                         <ModalOverlay />
                         <ModalContent>
-                        <ModalHeader>Prodcut Details</ModalHeader>
+                        <ModalHeader>Product Details</ModalHeader>
                         <ModalCloseButton bg="black" color="white"/>
                         <ModalBody>
                             <div className='row'>
@@ -87,17 +90,17 @@ const Product = (props) => {
                                         </AccordionButton>
                                         </h2>
                                         <AccordionPanel pb={4}>
-                                             <Button w="80px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">7W / 8.5 M</Button>
-                                             <Button w="80px"  mr="2"size="xs" colorScheme='' variant="outline">7.5W / 9 M</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">7.5</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">8</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">8.5</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">9</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">9.5</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">10</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">10.5</Button>
-                                             <Button w="40px"color="white" bg="black" mr="2"size="xs" colorScheme='' variant="outline">11</Button>
-                                             
+                                        <Select size="md" variant='filled' placeholder='Select size'>
+                                            <option value='option1'>7 W / 8.5 M</option>
+                                            <option value='option2'>7.5 W / 9 M</option>
+                                            <option value='option3'>8 W / 9.5 M</option>
+                                            <option value='option3'>8.5 W / 10 M</option>
+                                            <option value='option3'>9 W / 10.5 M</option>
+                                            <option value='option3'>9.5 W / 11 M</option>
+                                            <option value='option3'>10 W / 11.5 M</option>
+                                            <option value='option3'>10.5 W / 12 M</option>
+                                            </Select>
+   
                                         </AccordionPanel>
                                     </AccordionItem>
 
@@ -157,7 +160,8 @@ const Product = (props) => {
                         </ModalBody>
 
                         <ModalFooter>
-                            <Button  bg="black"colorScheme="blackAlpha" onClick={handleAddToCart}>Add to Cart</Button>
+                            {username ? <Button onClick={handleAddToCart}  bg="black"colorScheme="blackAlpha">Make Offer</Button> : <Link to="/Login"><Button  bg="black"colorScheme="blackAlpha" >Sign in to Make Offer</Button></Link>}
+
                         </ModalFooter>
                         </ModalContent>
                     </Modal>
